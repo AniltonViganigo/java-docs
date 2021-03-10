@@ -1,0 +1,261 @@
+Introdução à Lógica de programação.
+
+Algoritmo: sequência finita de instruções para se resolver um problema.
+
+Automação: Consiste em utilizar máquinas para executar o procedimento desejado de forma automática ou semiautomática.
+
+Programa: é um algoritmo executado pelo computador.
+
+O que é preciso para fazer um programa de computador?
+
+Vamos precisar de: 
+
+-> uma linguagem de programação.
+-> uma IDE(software para editar e testar o programa).
+-> um compilador(software para transformar o código fonte em código objeto).
+-> um gerador de código ou máquina virtual(software que permite que o programa seja executado).
+
+Mas o que é uma linguagem de programação?
+
+É um conjunto de regras léxicas(ortografia) e sintáticas(gramática) para se escrever programas.
+
+Exemplos de linguagens: Pascal, C, Java, C#, Python, Ruby, PHP, Javascript, etc.
+
+==============================================================================================
+
+IDE - Ambiente Integrado de Desenvolvimento
+
+É um conjunto de softwares utilizado para a contrução de programas.
+
+Exemplos: 
+
+	-> C/C++: Code Blocks
+	-> Java: Eclipse, Netbeans
+	-> C#: Microsoft Visual Studio
+
+Funcionalidades:
+
+	-> Edição de código fonte(endentação, autocompletar, destaque de palavras, etc)
+	-> Depuração e testes
+	-> Construção do produto final(build)
+	-> Sugestão de modelos(templates)
+	-> Auxiliar em várias tarefas do seu projeto
+	-> Entre outras.
+
+===============================================================================================
+
+Operadores aritméticos: C,C++, Java, C#
+
+	-> Soma: + 
+	-> Subtração: -
+	-> Multiplicação: *
+	-> Divisão: /
+	-> Resto da divisão ou "mod": %
+
+Obs: Precedência:
+	1° lugar: * , /, % 
+	2° lugar: +, -
+
+===============================================================================================
+
+Variáveis: é uma porção de memória(RAM) utilizada para armazenar dados durante a execução dos programas.
+
+Declaração de variáveis: 
+
+<tipo> <nome> = <valor inicial>
+
+Exemplos: 
+
+	int idade = 25;       ---> Memória RAM: Idade 25.
+	double altura = 1.68; --->            : Altura 1.68
+	char sexo = 'F'       ---> 	      : Sexo F
+
+Tipos de variáveis em Java:
+
+	-> byte: 8 bit
+	-> short: 16 bits
+	-> int: 32 bits
+	-> long: 64 bits
+	-> float: 32 bits
+	-> double: 64 bits
+	-> char: 16 bits
+	-> boolean: 1 bit(True or False)
+	-> string: palavras e textos
+
+Nome de variáveis:
+
+	-> Não pode começar com digito: use uma letra ou "_";
+	-> Não pode ter espaço em branco;
+	-> Não usar acentos ou til;
+	-> Sugestão: use o padrão "CamelCase". Exemplo: int salarioDoFuncionario;
+
+===============================================================================================
+
+Visão geral das Três operações básicas de programação
+
+Entrada de dados(leitura): é quando o usuário informa dados para o programa que serão armazenados em variáveis. 
+
+Processamento de dados: O processamento de dados se dá por um comando chamado ATRIBUIÇÃO.
+
+Saída de dados(escrita): é quando o programa informa dados para o usuário. 
+
+===============================================================================================
+
+Processamento de dados em Java: é feito por meio do comando de atribuição.
+
+Exemplo:
+
+<variável> = <expressão>
+
+Casting: é a conversão explicita dos valores de uma variável. 
+	--> Exemplo: (int), (double)
+
+===============================================================================================
+
+Entrada de dados em Java:
+
+Scanner: para fazer a entrada de dados, nós vamos criar um objeto do tipo "Scanner" da seguinte forma:
+
+	Scanner sc(variável) = new Scanner(System.in);
+
+	OBS: Para a variável do tipo Scanner funcionar, é preciso colocar no início do programa o comando(import java.util.Scanner;)
+	E quando não for mais necessário usar o comando, é preciso declarar o comando(sc.close())
+
+===============================================================================================
+
+Estrutura condicional (if  / else)
+
+Expressões comparativas
+
+Exemplo: 
+
+	5 > 10 --> resultado falso
+
+Operadores comparativos: 
+
+	>
+	<
+	>=
+	<=
+	== --> igual
+	!= --> diferente
+
+===============================================================================================
+
+Expressões lógicas
+
+Operadores lógicos:
+	       
+	       Significado
+	&& --> E("também". Obs: todas as condições devem ser verdadeiras.)
+	|| --> Ou(Pelo menos uma das condições seja verdaeira.)
+	!  --> Não(Esse operador inverte a condição.)
+
+===============================================================================================
+
+Estrutura condicional 
+
+	É uma estrutura de controle que permite definir que um certo bloco de comandos somente será executado dependendo de uma condição.
+
+Exemplo: 
+
+	Bloco1(Verdadeiro) --> Condição --> Bloco2(Falso);
+
+Simples
+
+	if ( <condição>)
+		{
+		<comando 1>
+		<comando 2>
+		}
+		OBS: Repare na endentação!! Ela ajudará a identificar os blocos estruturais.
+
+Composta
+
+	if ( <condição>)
+		{
+		<comando 1>
+		<comando 2>
+		}
+	else {
+		<comando 3>
+		<comando 4>
+	     }
+
+Exemplo resolvido:
+---------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int hora;
+		
+		System.out.println("Quantas horas?");
+		hora = sc.nextInt();
+		
+		if (hora < 12) {
+			System.out.println("Boa dia!");
+		}
+		else if (hora < 18) {
+			System.out.println("Boa tarde!");
+		}
+		else {
+			System.out.println("Boa noite!");
+		}
+		
+		sc.close();
+		}
+		
+		
+		}
+--------------------------------------------------------------------------
+
+Operadores de atribuição cumulativa
+
+a += b --> a = a + b;
+a -= b --> a = a - b;
+a *= b --> a = a * b;
+a /= b --> a = a / b;
+a %= b --> a = a % b;
+
+===============================================================================================
+
+Estrutura Switch-case
+
+É usada quando temos várias opções de fluxo a serem tratadas com base no valor de uma variável. Ao invés de termos várias estruturas if-else encadeadas, podemos optar pela estrutura switch-case.
+
+===============================================================================================
+
+Estruturas repetitivas
+
+
+
+Exemplo: 
+
+
+
+
+
+
+		
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
